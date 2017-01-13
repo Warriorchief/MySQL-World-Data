@@ -1,0 +1,92 @@
+
+/* SELECT countries.name, languages.language, languages.percentage
+FROM languages JOIN countries ON countries.id = languages.country_id
+WHERE language = 'Slovene'
+ORDER BY languages.percentage DESC;
+......
+Slovenia	Slovene	87.9
+Austria	Slovene	0.4
+Italy	Slovene	0.2
+Croatia	Slovene	0.0 */
+
+
+/* SELECT countries.name, count(cities.name) AS cities
+FROM countries JOIN cities ON countries.id = cities.country_id
+GROUP BY countries.name
+ORDER BY cities.population DESC;
+.....
+India	341
+South Korea	70
+Brazil	250
+China	363
+Indonesia	85
+Pakistan	59
+Turkey	62 */
+
+
+/* SELECT cities.name, cities.population
+FROM cities JOIN countries ON cities.country_id = countries.id
+WHERE countries.name = 'Mexico' AND cities.population > 500000
+ORDER BY cities.population DESC;
+.....
+Ciudad de MÃ©xico	8591309
+Guadalajara	1647720
+Ecatepec de Morelos	1620303
+Puebla	1346176
+NezahualcÃ³yotl	1224924 */
+
+
+/* SELECT countries.name, languages.language, languages.percentage
+FROM countries JOIN languages ON countries.id = languages.country_id
+WHERE languages.percentage > 89
+ORDER BY languages.percentage DESC;
+.....
+Grenada	Creole English	100.0
+El Salvador	Spanish	100.0
+Cuba	Spanish	100.0
+Rwanda	Rwanda	100.0 */
+
+
+/* SELECT countries.name, countries.surface_area, countries.population
+FROM countries
+WHERE surface_area < 501 AND population > 100000;
+.....
+Aruba	193.00	103000
+Barbados	430.00	270000
+Macao	18.00	473000
+Maldives	298.00	286000 */
+
+/* SELECT countries.name, countries.government_form, countries.capital, countries.life_expectancy
+FROM cities JOIN countries ON countries.capital = cities.id
+WHERE life_expectancy > 75 AND capital > 200 AND government_form = 'Constitutional Monarchy';
+.....
+Denmark	Constitutional Monarchy	3315	76.5
+Spain	Constitutional Monarchy	653	78.8
+United Kingdom	Constitutional Monarchy	456	77.7
+Jamaica	Constitutional Monarchy	1530	75.2
+Jordan	Constitutional Monarchy	1786	77.4
+Japan	Constitutional Monarchy	1532	80.7
+Liechtenstein	Constitutional Monarchy	2446	78.8 */
+
+
+/*SELECT countries.name, cities.name, cities.district, cities.population
+FROM countries JOIN cities on countries.id = cities.country_id
+WHERE countries.name = 'Argentina' AND cities.district = "Buenos Aires" AND cities.population > 500000
+ORDER BY cities.population DESC;
+......
+Argentina	La Matanza	Buenos Aires	1266461
+Argentina	Lomas de Zamora	Buenos Aires	622013
+Argentina	Quilmes	Buenos Aires	559249
+Argentina	Almirante Brown	Buenos Aires	538918 */
+
+
+/* SELECT countries.region, count(countries.region) AS countries
+FROM countries
+GROUP BY countries.region
+ORDER BY countries DESC
+......
+Caribbean	24
+Eastern Africa	20
+Middle East	18
+Western Africa	17
+Southern Europe	15 */
